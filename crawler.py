@@ -1,10 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
-
-
 def crawl_website(url, keyword):
     results = []
-
     try:
         response = requests.get(url, timeout=5)
         response.raise_for_status()
@@ -20,5 +17,5 @@ def crawl_website(url, keyword):
 
     except Exception as e:
         results.append(f"Error: {str(e)}")
-
+        
     return results
